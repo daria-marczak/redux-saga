@@ -10,5 +10,7 @@ export function* currentUserSaga() {
   const { id } = yield take(GET_CURRENT_USER_INFO);
   const response = yield call(fetch, `http://localhost:8081/user/${id}`);
   const data = yield apply(response, response.json);
-  yield put(setCurrentUser(data)); // fetches the data from the server and puts it into the specific place
+  yield put(setCurrentUser(data)); 
 }
+
+// fetches the data from the server and puts it into the specific place
